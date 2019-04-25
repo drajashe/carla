@@ -6,7 +6,8 @@
     - We can use an absolute path for the recorded files (to choose where to 'write to' or 'read from')
   * Physics:
     - Added Friction Trigger Boxes for simulating, for example, slippery surfaces in any region of the map defined by users.
-* Fixed Lidar effectiveness bug in manual_control.py
+  * Fixed Lidar effectiveness bug in manual_control.py
+  * Added C++ client example using LibCarla
 
 ## CARLA 0.9.5
 
