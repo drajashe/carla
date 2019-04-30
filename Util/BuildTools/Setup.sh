@@ -220,7 +220,7 @@ unset RPCLIB_BASENAME
 # -- Get GTest and compile it with libc++ --------------------------------------
 # ==============================================================================
 
-GTEST_BASENAME=googletest-1.8.0-ex
+GTEST_BASENAME=googletest-1.8.1
 
 GTEST_LIBCXX_INCLUDE=${PWD}/${GTEST_BASENAME}-libcxx-install/include
 GTEST_LIBCXX_LIBPATH=${PWD}/${GTEST_BASENAME}-libcxx-install/lib
@@ -237,7 +237,7 @@ else
 
   log "Retrieving Google Test."
 
-  git clone --depth=1 -b release-1.8.0 https://github.com/google/googletest.git ${GTEST_BASENAME}-source
+  git clone --depth=1 -b release-1.8.1 https://github.com/google/googletest.git ${GTEST_BASENAME}-source
 
   log "Building Google Test with libc++."
 
