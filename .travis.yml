@@ -15,7 +15,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7 # we need this one for the libstdc++.
-            - clang-6.0
+            - clang-7.0
             - ninja-build
             - python
             - python-pip

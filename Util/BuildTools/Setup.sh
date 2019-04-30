@@ -4,14 +4,13 @@
 # -- Set up environment --------------------------------------------------------
 # ==============================================================================
 
-command -v /usr/bin/clang++-6.0 >/dev/null 2>&1 || {
-  echo >&2 "clang 6.0 is required, but it's not installed.";
-  echo >&2 "make sure you build Unreal Engine with clang 6.0 too.";
+command -v /usr/bin/clang++-7 >/dev/null 2>&1 || {
+  echo >&2 "clang 7 is required, but it's not installed.";
   exit 1;
 }
 
-export CC=/usr/bin/clang-6.0
-export CXX=/usr/bin/clang++-6.0
+export CC=/usr/bin/clang-7
+export CXX=/usr/bin/clang++-7
 
 source $(dirname "$0")/Environment.sh
 
@@ -22,7 +21,7 @@ pushd ${CARLA_BUILD_FOLDER} >/dev/null
 # -- Get and compile libc++ ----------------------------------------------------
 # ==============================================================================
 
-LLVM_BASENAME=llvm-6.0-ex
+LLVM_BASENAME=llvm-7.0
 
 LLVM_INCLUDE=${PWD}/${LLVM_BASENAME}-install/include/c++/v1
 LLVM_LIBPATH=${PWD}/${LLVM_BASENAME}-install/lib
@@ -34,9 +33,9 @@ else
 
   log "Retrieving libc++."
 
-  git clone --depth=1 -b release_60  https://github.com/llvm-mirror/llvm.git ${LLVM_BASENAME}-source
-  git clone --depth=1 -b release_60  https://github.com/llvm-mirror/libcxx.git ${LLVM_BASENAME}-source/projects/libcxx
-  git clone --depth=1 -b release_60  https://github.com/llvm-mirror/libcxxabi.git ${LLVM_BASENAME}-source/projects/libcxxabi
+  git clone --depth=1 -b release_70  https://github.com/llvm-mirror/llvm.git ${LLVM_BASENAME}-source
+  git clone --depth=1 -b release_70  https://github.com/llvm-mirror/libcxx.git ${LLVM_BASENAME}-source/projects/libcxx
+  git clone --depth=1 -b release_70  https://github.com/llvm-mirror/libcxxabi.git ${LLVM_BASENAME}-source/projects/libcxxabi
 
   log "Compiling libc++."
 
@@ -90,7 +89,7 @@ else
 
   pushd ${BOOST_BASENAME}-source >/dev/null
 
-  BOOST_TOOLSET="clang-6.0"
+  BOOST_TOOLSET="clang-7"
   BOOST_CFLAGS="-fPIC -std=c++14 -DBOOST_ERROR_CODE_HEADER_ONLY"
 
   py2="/usr/bin/env python2"
