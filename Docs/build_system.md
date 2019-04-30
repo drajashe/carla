@@ -28,7 +28,7 @@ Get and compile dependencies
 
   * llvm-7.1 (libc++ and libc++abi)
   * rpclib-2.2.1 (twice, with libstdc++ and libc++)
-  * boost-1.69 (headers only)
+  * boost-1.70 (headers only)
   * googletest-1.8.0 (with libc++)
 
 #### LibCarla

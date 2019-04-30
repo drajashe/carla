@@ -1,6 +1,7 @@
 ## Latest
 
   * Upgraded to Unreal Engine 4.22
+  * Upgraded to Boost 1.70
   * Recorder fixes:
     - Actors at start of playback could interpolate positions from its current position instead than the recorded position, making some fast sliding effect during 1 frame.
     - Camera following in playback was not working if a new map was needed to load.
